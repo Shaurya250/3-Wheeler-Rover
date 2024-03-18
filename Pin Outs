@@ -1,0 +1,15 @@
+Arduino Project
+
+Pin 13:- DHT11
+PWMA 11
+PWMB 10
+AI2 12
+AI1 8
+STBY 7
+BI1 A1 15
+BI2 A2 16
+RX 0
+TX 1
+SERVO 6 
+TRIG 5
+ECHO 4 
