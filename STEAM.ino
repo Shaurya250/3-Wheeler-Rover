@@ -5,17 +5,17 @@
 #include <DHT.h>
 #include <DHT_U.h>
 
-#define AIN1 2
-#define BIN1 7
-#define AIN2 4
-#define BIN2 8
-#define PWMA 5
-#define PWMB 6
-#define STBY 9
-#define DHTPIN A1
+#define AIN1 8
+#define BIN1 15
+#define AIN2 12
+#define BIN2 16
+#define PWMA 11
+#define PWMB 10
+#define STBY 7
+#define DHTPIN 13
 #define DHTTYPE DHT11
-#define TRIGGER_PIN 10
-#define ECHO_PIN 12
+#define TRIGGER_PIN 5
+#define ECHO_PIN 4
 const int offsetA = 1;
 const int offsetB = 1;
 
@@ -40,7 +40,7 @@ void loop() {
     myServo.write(i);
     delay(30);
     int distance = sonar.ping_cm();// Calls a function for calculating the distance measured by the Ultrasonic sensor for each degree
-  
+    
     Serial.print(i); // Sends the current degree into the Serial Port
     Serial.print(","); // Sends addition character right next to the previous value needed later in the Processing IDE for indexing
     Serial.print(distance); // Sends the distance value into the Serial Port
@@ -62,7 +62,7 @@ void loop() {
       brake(motor1, motor2);
       back(motor1, motor2, -150);
       motor1.drive(255, 1000); 
-      }
+      }[
     else if (sulfate=="R"){
       motor1.drive(255,1000);
       delay(1000);
@@ -77,5 +77,9 @@ void loop() {
       forward(motor1, motor2, 150);
       delay(1000);
       brake(motor1, motor2);
+    else if (sulfate=="S"){
+      brake(motor1, motor2);
+      delay(1000);
+    }
     }
 }
