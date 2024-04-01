@@ -25,7 +25,7 @@ long duration;
 int distance;
 int d;
 char input;
-int i=172;
+int i=90;
 int temp;
 // Initializing motors.  The library will allow you to initialize as many
 // motors as you have memory for.  If you are using functions like forward
@@ -51,13 +51,13 @@ void loop(){
   if (Serial.available()>0){
     input=Serial.read();
   }
-  if (d<=20){
+  if (d<=26){
     brake(motor1, motor2);
     if (input=='R'){
-    motor1.drive(200);
+    motor1.drive(255);
     }
     else if (input=='L'){
-    motor2.drive(200);
+    motor2.drive(255);
     }
     else if (input=='B'){
     forward(motor1, motor2, -200);
@@ -78,7 +78,6 @@ void loop(){
   else if (input=='B'){
     forward(motor1, motor2, -200);
   }
-    delay(1000);
     Serial.print(i);
     Serial.print(",");
     Serial.print(d);
